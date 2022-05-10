@@ -1,6 +1,8 @@
 # Recreate a simple Sportsbook Homepage
 
-This project is a starter project in VueJs which is a very simplified version of the Barstool Sportsbook homepage.
+Starter project in VueJs for Sportsbook Internship, a very simplified version of the Barstool Sportsbook homepage.
+
+![Intern Project Wireframe](./intern-project-2.jpg)
 
 ## Starting Project
 
