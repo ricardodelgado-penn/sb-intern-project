@@ -1,17 +1,25 @@
 <script setup>
-import HomeView from '@/views/HomeView.vue';
+const props = defineProps({ allSports: {type: Array, required: true} })
+
+
 
 </script>
 
 <template>
   <div class="container">
     <div class="sports-wrapper">
-        <p v-for="sport in HomeView.allSports" v-bind:key="sport.key" >{{sport.name}}</p>
-        <p>test</p>
+      <p v-for="sport in props.allSports.value" :key="sport.key"> {{ sport.name }} | {{sport.key.toUpperCase()}} </p>
     </div>
   </div>
 </template>
 
 <style>
+.container {
+  width: 100%;
+}
 
+.sports-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>
