@@ -14,7 +14,7 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 <template>
   <div class="container">
     <div class="sports-wrapper">
-      <div 
+      <button
       class="sport" 
       v-for="sport in allSports" :key="sport.key"
       >
@@ -31,8 +31,8 @@ const props = defineProps({ allSports: { type: Array, required: true } })
       <component class="icon" v-else-if="sport.key === 'nfl'" 
       :is="IconFootball"></component>
       
-      {{ sport.key.toUpperCase() }}
-      </div>
+      <p class="button-text">{{ sport.key.toUpperCase() }}</p>
+      </button>
     </div>
   </div>
 </template>
@@ -44,7 +44,7 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 
 .sports-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -52,9 +52,34 @@ const props = defineProps({ allSports: { type: Array, required: true } })
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: skew(-30deg);
+  padding-left: 40px;
+  padding-right: 40px;
+  outline: none;
+  border: none;
+}
+
+button{
+  transition: background-color ease-in-out .3s;
+  background-color: #101c33;
+  color: rgb(167, 167, 167);
+}
+
+button:hover {
+  transition: background-color ease-in-out .3;
+  background-color: #2b3648;
+  color: #ffff;
+}
+
+.button-text {
+  transition: color ease-in-out .3;
+  transform: skew(30deg);;
 }
 
 .icon {
   margin-right: 10px;
+  transform: skew(30deg);;
 }
+
+
 </style>
