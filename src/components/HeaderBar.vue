@@ -7,31 +7,40 @@ import { ref } from 'vue';
 
 const props = defineProps({ allSports: { type: Array, required: true } })
 // let thisComponent = ref(IconBaseball)
-// ^^^tried to using this to make the component :is dynamic, but will circle back to it
+// ^^^tried using this to make the component :is dynamic, but will circle back to it
 </script>
-
 
 <template>
   <div class="container">
     <div class="sports-wrapper">
       <button
-      class="sport" 
-      v-for="sport in allSports" :key="sport.key"
+        v-for="sport in allSports" 
+        :key="sport.key"
+        class="sport"
       >
-
-      <component class="icon" v-if="sport.key === 'mlb'" 
-      :is="IconBaseball"></component>
+        <IconBaseball
+          v-if="sport.key === 'mlb'"
+          class="icon"
+        />
       
-      <component class="icon" v-else-if="sport.key === 'nhl'" 
-      :is="IconHockey" ></component>
+        <IconHockey
+          v-else-if="sport.key === 'nhl'" 
+          class="icon"
+        />
       
-      <component class="icon" v-else-if="sport.key === 'nba'" 
-      :is="IconBasketball"></component>
+        <IconBasketball
+          v-else-if="sport.key === 'nba'" 
+          class="icon"
+        />
       
-      <component class="icon" v-else-if="sport.key === 'nfl'" 
-      :is="IconFootball"></component>
+        <IconFootball
+          v-else-if="sport.key === 'nfl'" 
+          class="icon"
+        />
       
-      <p class="button-text">{{ sport.key.toUpperCase() }}</p>
+        <p class="button-text">
+          {{ sport.key.toUpperCase() }}
+        </p>
       </button>
     </div>
   </div>
@@ -43,6 +52,8 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 }
 
 .sports-wrapper {
+  height: 50px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,16 +64,17 @@ const props = defineProps({ allSports: { type: Array, required: true } })
   justify-content: center;
   align-items: center;
   transform: skew(-30deg);
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 6VW;
+  padding-right: 6VW;
   outline: none;
   border: none;
 }
 
 button{
+  height: 64px;
   transition: background-color ease-in-out .3s;
   background-color: #101c33;
-  color: rgb(167, 167, 167);
+  color: #a7a7a7;
 }
 
 button:hover {
@@ -74,12 +86,11 @@ button:hover {
 .button-text {
   transition: color ease-in-out .3;
   transform: skew(30deg);;
+  font-size: 16px;
 }
 
 .icon {
-  margin-right: 10px;
-  transform: skew(30deg);;
+  margin-right: 16px;
+  transform: skew(30deg);
 }
-
-
 </style>

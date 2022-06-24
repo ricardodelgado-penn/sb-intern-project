@@ -50,7 +50,6 @@ onMounted(() => {
 
 <template>
   <HeaderBar
-    :key="allSports.key"
     :all-sports="allSports"
     :name="allSports.name"
   />
