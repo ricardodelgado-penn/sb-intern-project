@@ -1,18 +1,17 @@
 <script setup>
-import HeaderBar from '../components/HeaderBar.vue';
 import { onMounted, inject, ref } from 'vue'
+import HeaderBar from '../components/HeaderBar.vue';
 const axios = inject('axios')
 
 const allSports = ref([]);
-const events = [];
-const bets = [];
-const teams = [];
+const events = ref([]);
+const bets = ref([]);
+const teams = ref([]);
 
 const getAllSports = () => {
     axios.get('/all-sports')
         .then(response => {
             allSports.value = response.data
-            console.log('allSports', allSports)
         })
 }
 
@@ -20,7 +19,6 @@ const getEvents = () => {
     axios.get('/events')
         .then(response => {
             events.value = response.data
-            console.log('events', events)
         })
 }
 
@@ -28,7 +26,6 @@ const getBets = () => {
     axios.get('/bets')
         .then(response => {
             bets.value = response.data
-            console.log('bets', bets)
         })
 }
 
@@ -36,7 +33,6 @@ const getTeams = () => {
     axios.get('/teams')
         .then(response => {
             teams.value = response.data
-            console.log('teams', teams)
         })
 }
 
@@ -54,7 +50,3 @@ onMounted(() => {
     :name="allSports.name"
   />
 </template>
-
-<style scoped>
-
-</style>

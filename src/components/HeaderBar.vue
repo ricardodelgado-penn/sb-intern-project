@@ -1,13 +1,11 @@
 <script setup>
+import { ref } from 'vue';
 import IconBaseball from '../components/icons/IconBaseball.vue';
 import IconBasketball from '../components/icons/IconBasketball.vue';
 import IconFootball from '../components/icons/IconFootball.vue';
 import IconHockey from '../components/icons/IconHockey.vue';
-import { ref } from 'vue';
 
 const props = defineProps({ allSports: { type: Array, required: true } })
-// let thisComponent = ref(IconBaseball)
-// ^^^tried using this to make the component :is dynamic, but will circle back to it
 </script>
 
 <template>
@@ -24,17 +22,17 @@ const props = defineProps({ allSports: { type: Array, required: true } })
         />
       
         <IconHockey
-          v-else-if="sport.key === 'nhl'" 
+          v-if="sport.key === 'nhl'" 
           class="icon"
         />
       
         <IconBasketball
-          v-else-if="sport.key === 'nba'" 
+          v-if="sport.key === 'nba'" 
           class="icon"
         />
       
         <IconFootball
-          v-else-if="sport.key === 'nfl'" 
+          v-if="sport.key === 'nfl'" 
           class="icon"
         />
       
@@ -53,7 +51,7 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 
 .sports-wrapper {
   height: 50px;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,8 +62,8 @@ const props = defineProps({ allSports: { type: Array, required: true } })
   justify-content: center;
   align-items: center;
   transform: skew(-30deg);
-  padding-left: 6VW;
-  padding-right: 6VW;
+  padding-left: 6vw;
+  padding-right: 6vw;
   outline: none;
   border: none;
 }
@@ -75,6 +73,7 @@ button{
   transition: background-color ease-in-out .3s;
   background-color: #101c33;
   color: #a7a7a7;
+  cursor: pointer;
 }
 
 button:hover {
