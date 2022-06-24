@@ -49,7 +49,11 @@ onMounted(() => {
 </script>
 
 <template>
-<HeaderBar :allSports="allSports" :key="allSports.key" :name="allSports.name" />
+  <HeaderBar
+    :key="allSports.key"
+    :all-sports="allSports"
+    :name="allSports.name"
+  />
 </template>
 
 <style scoped>
