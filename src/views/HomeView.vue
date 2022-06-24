@@ -3,11 +3,13 @@ import { onMounted, inject, ref } from 'vue'
 import HeaderBar from '../components/HeaderBar.vue';
 const axios = inject('axios')
 
+// data
 const allSports = ref([]);
 const events = ref([]);
 const bets = ref([]);
 const teams = ref([]);
 
+// functions
 const getAllSports = () => {
     axios.get('/all-sports')
         .then(response => {
@@ -36,6 +38,7 @@ const getTeams = () => {
         })
 }
 
+// setup
 onMounted(() => {
     getAllSports() 
     getEvents()

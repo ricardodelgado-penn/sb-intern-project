@@ -50,8 +50,9 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 }
 
 .sports-wrapper {
-  height: 50px;
+  height: 64px;
   max-width: 100%;
+  margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,14 +62,17 @@ const props = defineProps({ allSports: { type: Array, required: true } })
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 90px;
   transform: skew(-30deg);
-  padding-left: 6vw;
-  padding-right: 6vw;
   outline: none;
   border: none;
 }
 
 button{
+  min-width: 90px;
+  width: 25em;
   height: 64px;
   transition: background-color ease-in-out .3s;
   background-color: #101c33;
