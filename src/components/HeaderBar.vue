@@ -52,27 +52,23 @@ const props = defineProps({ allSports: { type: Array, required: true } })
 .sports-wrapper {
   height: 64px;
   max-width: 100%;
-  margin: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow: scroll;
 }
 
 .sport {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  min-width: 90px;
+  min-width: 180px;
   transform: skew(-30deg);
   outline: none;
   border: none;
 }
 
 button{
-  min-width: 90px;
-  width: 25em;
   height: 64px;
   transition: background-color ease-in-out .3s;
   background-color: #101c33;
@@ -93,6 +89,7 @@ button:hover {
 }
 
 .icon {
+  min-height: 16px;
   margin-right: 16px;
   transform: skew(30deg);
 }
