@@ -2,6 +2,7 @@
 import { onMounted, inject, ref } from 'vue'
 import HeaderBar from '../components/HeaderBar.vue';
 import SideBar from '../components/SideBar.vue';
+
 const axios = inject('axios')
 
 // data
@@ -69,7 +70,7 @@ onMounted(() => {
 .grid-container {
     display: grid;
     grid-template-rows: 20% auto;
-    grid-auto-columns: 80px auto;
+    grid-auto-columns: 240px auto;
     grid-template-areas:
         '🟨 🟪'
         '🟨 🟥'
@@ -87,6 +88,4 @@ onMounted(() => {
 .body {
     grid-area: 🟥;
 }
-
-
 </style>
