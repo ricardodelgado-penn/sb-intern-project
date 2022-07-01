@@ -6,9 +6,13 @@ Starter project in VueJs for Sportsbook Internship, a very simplified version of
 
 ## Starting Project
 
-1. Fork Project into your Github
-2. Clone onto your computer
-3. `yarn install` in both the root folder and in the server folder.
+Before starting:
+
+1. Make sure that you have Node Version Manager installed (NVM) installed: https://github.com/nvm-sh/nvm, and have Node LTS version as your selected version.
+2. Make sure that you have Yarn installed: https://yarnpkg.com/
+3. Fork Project into your Github
+4. Clone onto your computer
+5. `yarn install` in both the root folder and in the server folder.
 
 In root directory run:
 
