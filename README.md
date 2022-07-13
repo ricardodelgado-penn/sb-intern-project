@@ -35,7 +35,7 @@ What you'll be aiming to do is to:
   + Have rows of events by Sport
   + Each row will have a series of events
   + Each event will have 2 participants with two buttons each (4 in each event box) displaying their lineage
-  + On click this button will submit the specific bet
+  + On click this button will submit the specific bet, make sure it includes an object with the keys of `eventId`, `betId`, `teamId` for the specific bet.
 
 ## What We'll Be Looking For
 
